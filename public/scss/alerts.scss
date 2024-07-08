@@ -1,0 +1,29 @@
+@import "./_theme";
+
+$threshold: 70%;
+
+@function contrast-color($color, $dark, $light) {
+	@return if(lightness($color) < $threshold, $light, $dark);
+}
+
+@mixin button($background-color, $dark: $text-light, $light: $text-dark) {
+	background-color: $background-color !important;
+	color: contrast-color($background-color, $dark, $light) !important;
+	&:hover {
+		background-color: darken($background-color, 15%) !important;
+		color: contrast-color(darken($background-color, 15%), $dark, $light) !important;
+	}
+}
+
+.SnackbarItem-variantSuccess {
+	@include button($success);
+}
+.SnackbarItem-variantError {
+	@include button($danger);
+}
+.SnackbarItem-variantInfo {
+	@include button($info);
+}
+.SnackbarItem-variantWarning {
+	@include button($warning);
+}

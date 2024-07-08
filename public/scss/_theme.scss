@@ -1,0 +1,60 @@
+//#region (collapsed) System Colors from Material Design
+$primary-light: #d55f61;
+$primary-main: #cb373a;
+$primary-dark: #8e2628;
+
+$secondary-main: #232323;
+$secondary-light: #505050;
+$secondary-dark: #191919;
+//#endregion
+
+//#region (collapsed) Dark/Light Theme Colors from Material Design
+$background-ground-light: #e5e5e5;
+$background-ground-dark: #121212;
+$background-ground: $background-ground-dark;
+
+$background-light: #f5f5f5;
+$background-dark: #202020;
+$background: $background-dark;
+
+$background-paper-light: #ffffff;
+$background-paper-dark: #424242;
+$background-paper: $background-paper-dark;
+
+$text-light: #333333;
+$text-dark: #fff;
+$text: $text-dark;
+
+$text-primary-light: #888;
+$text-primary-dark: #fff;
+$text-primary: $text-primary-dark;
+
+$text-secondary-light: #888;
+$text-secondary-dark: #fff;
+$text-secondary: $text-secondary-dark;
+
+$highlight: rgba(red($primary-main), green($primary-main), blue($primary-main), 0.1);
+//#endregion
+
+$font-family-sans-serif: Roboto Slab, sans-serif;
+$font-family-serif: Roboto, serif;
+
+$spacing: 8px;
+
+//#region (collapsed) Events Colors from Material Design
+$success-light: #81c784;
+$success: #4caf50;
+$success-dark: #388e3c;
+
+$info-light: #64b5f6;
+$info: #2196f3;
+$info-dark: #1976d2;
+
+$warning-light: #ffb74d;
+$warning: #ff9800;
+$warning-dark: #f57c00;
+
+$danger-light: #e57373;
+$danger: #f44336;
+$danger-dark: #d32f2f;
+//#endregion

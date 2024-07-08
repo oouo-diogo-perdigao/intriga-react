@@ -1,0 +1,49 @@
+//importa theme
+@import "../../../_theme";
+
+.messageRoll {
+	.dicesRoll {
+		display: inline-block;
+		height: 24px;
+		padding: 0 4px;
+		background-color: var(--background);
+		border-radius: 8px;
+		text-align: center;
+		font-size: 16px;
+		font-weight: bold;
+		transition: background-color 0.3s, color 0.3s;
+
+		&.highlighted {
+			background-color: var(--primary);
+			// color: #ffffff;
+		}
+	}
+
+	.dicesResults {
+		background-color: var(--background);
+		border-radius: 8px;
+		text-align: center;
+		font-size: 16px;
+		font-weight: bold;
+		padding: 0 8px;
+
+		&.highlighted {
+			border: 2px solid var(--primary);
+		}
+		.numberOne {
+			color: #ff7373; /* Vermelho claro para números igual a 1 */
+		}
+		.numberMax {
+			color: #7aff7a; /* Verde claro para números igual ao máximo do dado */
+		}
+		.numberFix {
+			color: #bbb; /* Cinza claro para números fixos */
+		}
+		.diceFaces {
+			display: none;
+			margin-left: 5px;
+			font-weight: normal;
+			color: #888888;
+		}
+	}
+}

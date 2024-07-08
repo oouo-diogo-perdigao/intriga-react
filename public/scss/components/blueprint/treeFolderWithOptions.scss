@@ -1,0 +1,20 @@
+@import "../../_theme";
+
+.treeFolderWithOptions {
+	.settings {
+		float: right;
+
+		&:hover {
+			color: $primary-main;
+		}
+	}
+	.verticalAline {
+		display: inline-flex;
+		vertical-align: middle;
+		width: 100%;
+	}
+
+	.renameIcon {
+		margin-top: 7px;
+	}
+}

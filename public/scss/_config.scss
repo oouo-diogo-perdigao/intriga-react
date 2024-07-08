@@ -1,0 +1,89 @@
+// This variables there are sync with Theme.jsx
+@import "./_theme.scss";
+
+//Final variables
+/* Estilos para o modo claro */
+:root {
+	//#region (collapsed) System Colors from Material Design
+	--primaryLight: #{$primary-light};
+	--primary: #{$primary-main};
+	--primaryDark: #{$primary-dark};
+
+	--secondaryLight: #{$secondary-light};
+	--secondary: #{$secondary-main};
+	--secondaryDark: #{$secondary-dark};
+	//#endregion
+
+	//#region (collapsed) Events Colors from Material Design
+	--successLight: #{$success-light};
+	--success: #{$success};
+	--successDark: #{$success-dark};
+
+	--infoLight: #{$info-light};
+	--info: #{$info};
+	--infoDark: #{$info-dark};
+
+	--warningLight: #{$warning-light};
+	--warning: #{$warning};
+	--warningDark: #{$warning-dark};
+
+	--dangerLight: #{$danger-light};
+	--danger: #{$danger};
+	--dangerDark: #{$danger-dark};
+	//#endregion
+
+	--font-family-sans-serif: $font-family-sans-serif;
+	--font-family-serif: $font-family-serif;
+}
+
+/* Estilos para o modo claro */
+:root {
+	--text: #{$text-light};
+	--textPrimary: #{$text-primary-light};
+	--textSecondary: #{$text-secondary-light};
+
+	--backgroundGround: #{$background-ground-light};
+	--background: #{$background-light};
+	--backgroundPaper: #{$background-paper-light};
+}
+
+/* Estilos para o modo escuro */
+:root:not(.light-mode) {
+	--text: #{$text-dark};
+	--textPrimary: #{$text-primary-dark};
+	--textSecondary: #{$text-secondary-dark};
+
+	--backgroundGround: #{$background-ground-dark};
+	--background: #{$background-dark};
+	--backgroundPaper: #{$background-paper-dark};
+}
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+body {
+	font-family: $font-family-serif;
+}
+h1 {
+	font-family: $font-family-sans-serif;
+	font-weight: 600;
+}
+h2 {
+	font-family: $font-family-sans-serif;
+	font-weight: 600;
+}
+h3 {
+	font-family: $font-family-sans-serif;
+	font-weight: 500;
+}
+h4 {
+	font-family: $font-family-sans-serif;
+	font-weight: 500;
+}
+h5 {
+	font-family: $font-family-sans-serif;
+	font-weight: 400;
+}
+h6 {
+	font-family: $font-family-sans-serif;
+	font-weight: 400;
+}
