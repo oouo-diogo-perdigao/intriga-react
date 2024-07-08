@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Frontend do Projeto de CRUD de Personagens
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto é a interface frontend para um aplicativo de CRUD de personagens, construído usando React e Bootstrap. A aplicação permite adicionar, visualizar, editar e excluir personagens, cada um com suas informações pessoais e imagem.
 
-## Available Scripts
+## Funcionalidades
 
-In the project directory, you can run:
+- Listagem de personagens com imagem e informações detalhadas.
+- Adicionar novo personagem com campos para nome, CPF, CEP, país, estado, cidade, bairro, rua, número, complemento e referência.
+- Edição e deleção de personagens.
+- Integração com uma API backend para buscar informações baseadas no CEP.
 
-### `npm start`
+## Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React
+- React Bootstrap
+- Axios
+- 
+## Instalação
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone o repositório:
+2. Instale as dependências: `npm install`
+3. Inicie o servidor de desenvolvimento: `npm start`
 
-### `npm test`
+A aplicação estará disponível em http://localhost:3000.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Configuração
+### Configuração do Axios
+No arquivo axiosInstance.js, configure a URL base para a API backend:
 
-### `npm run build`
+```js
+import axios from 'axios';
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+const instance = axios.create({
+  baseURL: 'http://localhost:8000/api',
+});
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+export default instance;
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Uso
+### Adicionar Personagem
+1. Clique no botão "+" para abrir o formulário de adição.
+2. Preencha os campos necessários e clique em "Salvar".
 
-### `npm run eject`
+### Editar/Excluir Personagem
+1. Clique no personagem desejado para abrir as opções de edição ou exclusão.
+2. Edite as informações e salve ou clique em "Excluir" para remover o personagem.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contribuição
+Sinta-se à vontade para contribuir com este projeto. Basta fazer um fork, criar uma nova branch e enviar um pull request.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Licença
+Este projeto está licenciado sob a licença MIT.
