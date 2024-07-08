@@ -1,0 +1,31 @@
+.add-personagem-card {
+	label {
+		color: gray;
+	}
+
+	button {
+		background-color: #8b0000;
+		color: white;
+		border: none;
+		border-radius: 5px;
+		padding: 10px 20px;
+		cursor: pointer;
+	}
+
+	button:hover {
+		background-color: #b30000; /* Tom mais claro de vermelho */
+	}
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+	.personagem-card-body {
+		height: 20%;
+	}
+
+	.justify-content-center {
+		display: flex;
+		justify-content: center;
+	}
+}

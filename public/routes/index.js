@@ -1,2 +1,2 @@
-export { LoginScreen } from "./login";
+export { LoginScreen } from "./LoginScreen";
 export { PersonagemListScreen } from "./PersonagemListScreen";

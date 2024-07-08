@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import axios from "axios";
+//importar scss
+import "../../scss/components/assets/PersonagemCard.scss";
 
 const PersonagemCard = ({ personagem, onDelete }) => {
 	const [isEditing, setIsEditing] = useState(false);
@@ -8,7 +10,7 @@ const PersonagemCard = ({ personagem, onDelete }) => {
 
 	const deletePersonagem = (id) => {
 		axios
-			.delete(`http://localhost:8000/api/personagem/${id}`)
+			.delete(`/personagem/${id}`)
 			.then(() => {
 				onDelete();
 			})
@@ -29,10 +31,7 @@ const PersonagemCard = ({ personagem, onDelete }) => {
 		const updatedPersonagem = { nome: nome };
 
 		axios
-			.put(
-				`http://localhost:8000/api/personagem/${personagem.id}`,
-				updatedPersonagem
-			)
+			.put(`/personagem/${personagem.id}`, updatedPersonagem)
 			.then(() => {
 				setIsEditing(false);
 				onDelete();

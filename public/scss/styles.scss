@@ -2,20 +2,18 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+		"Droid Sans", "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
-.App{
+.App {
 	max-height: 100vh;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 /* styles.css */
@@ -24,60 +22,4 @@ code {
 	flex-wrap: wrap;
 	gap: 20px;
 	overflow-y: auto;
-}
-.personagem-card {
-  background-color: #8b0000; /* Vermelho escuro */
-  color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  width: 200px;
-  height: 300px; /* Altura aumentada para 400px */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* Alinha o conteúdo no final do card */
-  position: relative; /* Para posicionar o botão de deletar corretamente */
-}
-.personagem-img {
-  width: 100%;
-	height: 80%;
-	object-fit: cover;
-}
-
-.personagem-card-body {
-	height: 20%;
-}
-
-.personagem-title {
-  text-align: center;
-  margin: 0;
-  padding-bottom: 10px; /* Adiciona um espaço entre a imagem e o texto */
-}
-
-.personagem-delete {
-  background-color: transparent;
-	color: rgba(122, 122, 122, 0.2);
-  /* border: none; */
-  /* font-size: 1.2rem; */
-  position: absolute;
-  top: 10px;
-  right: 10px;
-	float: right;
-}
-
-.add-personagem-card form {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-}
-
-.add-personagem-card button {
-	background-color: #8b0000;
-	color: white;
-	border: none;
-	border-radius: 5px;
-	padding: 10px 20px;
-	cursor: pointer;
-}
-
-.add-personagem-card button:hover {
-	background-color: #b30000; /* Tom mais claro de vermelho */
 }

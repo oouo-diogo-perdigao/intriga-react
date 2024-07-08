@@ -12,7 +12,6 @@ import logoFull from "../img/logoFull.png";
 //#region Redux, para setar as rotas
 import { compose } from "redux";
 import { loginRedux } from "../redux/actions/login";
-import { userInfoSet } from "../redux/actions/userInfo";
 //#endregion
 
 //#region React-router
@@ -54,7 +53,7 @@ class LoginComponent extends Component {
 
 			if (decoded.exp > Date.now() / 1000) {
 				const { router, dispatch } = this.props;
-				router.navigate("/room/search");
+				router.navigate("/");
 				dispatch(loginRedux(decoded));
 			}
 		}
@@ -129,15 +128,7 @@ class LoginComponent extends Component {
 			const decoded = jwt.decode(ret, { algorithms: ["RS256"] });
 			if (decoded.exp > Date.now() / 1000) {
 				const { router, dispatch } = this.props;
-				router.navigate("/room/search");
-
-				axios
-					.get("/api/user")
-					.then((response) => {
-						console.log(response);
-						return response.data;
-					})
-					.then((user) => dispatch(userInfoSet(user)));
+				router.navigate("/");
 
 				dispatch(loginRedux(decoded));
 			}
