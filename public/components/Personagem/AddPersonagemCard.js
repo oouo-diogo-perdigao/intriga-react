@@ -25,8 +25,8 @@ const AddPersonagemCard = ({ onChange }) => {
 		const formData = new FormData();
 		formData.append("nome", nome);
 		formData.append("imagem", imagem);
-		formData.append("cpf", cpf);
-		formData.append("cep", cep);
+		formData.append("cpf", cpf.replace(/\D/g, ""));
+		formData.append("cep", cep); // Envia o CEP formatado
 		formData.append("pais", pais);
 		formData.append("estado", estado);
 		formData.append("cidade", cidade);
@@ -58,6 +58,10 @@ const AddPersonagemCard = ({ onChange }) => {
 			.catch((error) => console.error(error));
 	};
 
+	const validateCep = (cep) => {
+		return /^\d{5}-?\d{3}$/.test(cep);
+	};
+
 	const handleImagemChange = (e) => {
 		const file = e.target.files[0];
 		setImagem(file);
@@ -71,9 +75,16 @@ const AddPersonagemCard = ({ onChange }) => {
 	};
 
 	const handleCepBlur = () => {
-		if (cep.trim() !== "") {
+		let cepValue = cep.replace(/\D/g, ""); // Remove caracteres não numéricos
+
+		if (cepValue.trim() !== "") {
+			if (cepValue.length > 5) {
+				cepValue = cepValue.replace(/(\d{5})(\d{1,3})/, "$1-$2");
+			}
+			setCep(cepValue);
+
 			axios
-				.get(`/buscar-cep/${cep}`)
+				.get(`/buscar-cep/${cepValue}`)
 				.then((response) => {
 					const { data } = response;
 					setPais(data.pais || "");
@@ -84,7 +95,6 @@ const AddPersonagemCard = ({ onChange }) => {
 				})
 				.catch((error) => {
 					console.error(error);
-					// Limpar os campos de endereço em caso de erro ou CEP inválido
 					setPais("");
 					setEstado("");
 					setCidade("");
@@ -92,6 +102,21 @@ const AddPersonagemCard = ({ onChange }) => {
 					setRua("");
 				});
 		}
+	};
+
+	const formatCpf = (value) => {
+		const cpfValue = value.replace(/\D/g, "");
+		if (cpfValue.length <= 11) {
+			return cpfValue
+				.replace(/(\d{3})(\d)/, "$1.$2")
+				.replace(/(\d{3})(\d)/, "$1.$2")
+				.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+		}
+		return value;
+	};
+
+	const handleCpfChange = (e) => {
+		setCpf(formatCpf(e.target.value));
 	};
 
 	return (
@@ -122,7 +147,7 @@ const AddPersonagemCard = ({ onChange }) => {
 										className="form-control mb-2"
 										placeholder="CPF"
 										value={cpf}
-										onChange={(e) => setCpf(e.target.value)}
+										onChange={handleCpfChange}
 										required
 									/>
 									<label htmlFor="nome">CPF</label>
